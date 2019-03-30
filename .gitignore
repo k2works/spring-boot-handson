@@ -160,3 +160,4 @@ gradle-app.setting
 .idea
 target
 output-sam.yaml
+packaged.yaml

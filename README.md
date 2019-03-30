@@ -49,6 +49,11 @@ $ aws cloudformation describe-stacks --stack-name ServerlessSpringApi
 
 ### 配置
 
+```bash
+$ sam package --template-file sam.yaml --s3-bucket spring-handson-k2works --output-template-file packaged.yaml
+$ sam deploy --template-file packaged.yaml --stack-name ServerlessSpringApi --capabilities CAPABILITY_IAM --parameter-overrides ENV=production
+```
+
 **[⬆ back to top](#構成)**
 
 ### 運用

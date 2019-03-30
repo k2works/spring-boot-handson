@@ -58,6 +58,18 @@ $ sam deploy --template-file packaged.yaml --stack-name ServerlessSpringApi --ca
 
 ### 運用
 
+```bash
+$ npm init
+$ npm install npm-run-all watch foreman rimraf cpx --save-dev
+$ touch Procfile
+$ npm install --save-dev browser-sync
+$ npx  browser-sync init
+```
+
+```bash
+$ aws cloudformation delete-stack --stack-name ServerlessSpringApi
+```
+
 **[⬆ back to top](#構成)**
 
 ### 開発

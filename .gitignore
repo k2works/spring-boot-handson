@@ -161,3 +161,4 @@ gradle-app.setting
 target
 output-sam.yaml
 packaged.yaml
+node_modules

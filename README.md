@@ -77,3 +77,5 @@ $ aws cloudformation delete-stack --stack-name ServerlessSpringApi
 **[⬆ back to top](#構成)**
 
 ## 参照
+
+- [SpringBootでマイクロサービスを作ってKubernetesにデプロイしてみる【実践編】](https://github.com/nebosuke/aks_study)

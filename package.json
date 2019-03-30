@@ -12,14 +12,29 @@
     "rimraf": "^2.6.3",
     "watch": "^1.0.2"
   },
+  "config": {
+    "s3_bucket": "spring-handson-k2works",
+    "stack_name": "ServerlessSpringApi"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gradle test",
+    "build": "gradle build; mvn package",
+    "clean": "gradle clean; mvn clean",
+    "start": "nf start -j Procfile",
+    "app:spring": "gradle bootRun",
+    "app:web": "browser-sync start --config bs-config.js",
+    "app:watch": "watch 'npm run build' ./src",
+    "sam:local": "sam local start-api --template sam.yaml --host 0.0.0.0",
+    "sam:package": "mvn package; sam package --template-file sam.yaml --s3-bucket $npm_package_config_s3_bucket --output-template-file packaged.yaml",
+    "sam:deploy": "sam deploy --template-file packaged.yaml --stack-name $npm_package_config_stack_name --capabilities CAPABILITY_IAM --parameter-overrides ENV=production",
+    "sam:describe": "aws cloudformation describe-stacks --stack-name $npm_package_config_stack_name",
+    "sam:release": "rm -rf target; npm-run-all test clean build sam:package sam:deploy sam:describe"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/k2works/spring-boot-handson.git"
   },
-  "author": "",
+  "author": "k2works",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/k2works/spring-boot-handson/issues"

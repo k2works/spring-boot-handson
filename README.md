@@ -1,4 +1,43 @@
-# spring-boot-handson serverless API
+# SpringBootHand-on
+
+## 概要
+
+### 目的
+
+### 前提
+
+| ソフトウェア   | バージョン | 備考 |
+| :------------- | :--------- | :--- |
+| java           | 8          |      |
+| node           | 8.10.0     |      |
+| docker         | 1.23.2     |      |
+| docker-compose | 1.23.2     |      |
+| sam cli        | 0.12.0     |      |
+
+## 構成
+
+- [構築](#構築)
+- [配置](#配置)
+- [運用](#運用)
+
+## 詳細
+
+### 構築
+
+**[⬆ back to top](#構成)**
+
+### 配置
+
+**[⬆ back to top](#構成)**
+
+### 運用
+
+**[⬆ back to top](#構成)**
+
+### 開発
+
+#### spring-boot-handson serverless API
+
 The spring-boot-handson project, created with [`aws-serverless-java-container`](https://github.com/awslabs/aws-serverless-java-container).
 
 The starter project defines a simple `/ping` resource that can accept `GET` requests with its tests.
@@ -6,6 +45,7 @@ The starter project defines a simple `/ping` resource that can accept `GET` requ
 The project folder also includes a `sam.yaml` file. You can use this [SAM](https://github.com/awslabs/serverless-application-model) file to deploy the project to AWS Lambda and Amazon API Gateway or test in local with [SAM Local](https://github.com/awslabs/aws-sam-local).
 
 Using [Maven](https://maven.apache.org/), you can create an AWS Lambda-compatible zip file simply by running the maven package command from the project folder.
+
 ```bash
 $ mvn archetype:generate -DartifactId=spring-boot-handson -DarchetypeGroupId=com.amazonaws.serverless.archetypes -DarchetypeArtifactId=aws-serverless-springboot2-archetype -DarchetypeVersion=1.3.1 -DgroupId=k2works -Dversion=1.0-SNAPSHOT -Dinteractive=false
 $ cd spring-boot-handson
@@ -46,7 +86,7 @@ $ curl -s http://127.0.0.1:3000/ping | python -m json.tool
 {
     "pong": "Hello, World!"
 }
-``` 
+```
 
 You can use the [AWS CLI](https://aws.amazon.com/cli/) to quickly deploy your application to AWS Lambda and Amazon API Gateway with your SAM template.
 
@@ -61,7 +101,7 @@ aws cloudformation deploy --template-file /your/path/output-sam.yaml --stack-nam
 ```
 
 As the command output suggests, you can now use the cli to deploy the application. Choose a stack name and run the `aws cloudformation deploy` command from the output of the package command.
- 
+
 ```
 $ aws cloudformation deploy --template-file output-sam.yaml --stack-name ServerlessSpringApi --capabilities CAPABILITY_IAM
 ```
@@ -73,9 +113,9 @@ $ aws cloudformation describe-stacks --stack-name ServerlessSpringApi
 {
     "Stacks": [
         {
-            "StackId": "arn:aws:cloudformation:us-west-2:xxxxxxxx:stack/ServerlessSpringApi/xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx", 
-            "Description": "AWS Serverless Spring API - com.amazonaws.serverless.archetypes::aws-serverless-springboot2-archetype", 
-            "Tags": [], 
+            "StackId": "arn:aws:cloudformation:us-west-2:xxxxxxxx:stack/ServerlessSpringApi/xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx",
+            "Description": "AWS Serverless Spring API - com.amazonaws.serverless.archetypes::aws-serverless-springboot2-archetype",
+            "Tags": [],
             "Outputs": [
                 {
                     "Description": "URL for application",
@@ -83,13 +123,13 @@ $ aws cloudformation describe-stacks --stack-name ServerlessSpringApi
                     "OutputKey": "SpringBootHandsonApi",
                     "OutputValue": "https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping"
                 }
-            ], 
-            "CreationTime": "2016-12-13T22:59:31.552Z", 
+            ],
+            "CreationTime": "2016-12-13T22:59:31.552Z",
             "Capabilities": [
                 "CAPABILITY_IAM"
-            ], 
-            "StackName": "ServerlessSpringApi", 
-            "NotificationARNs": [], 
+            ],
+            "StackName": "ServerlessSpringApi",
+            "NotificationARNs": [],
             "StackStatus": "UPDATE_COMPLETE"
         }
     ]
@@ -106,3 +146,7 @@ $ curl -s https://xxxxxxx.execute-api.us-west-2.amazonaws.com/Prod/ping | python
     "pong": "Hello, World!"
 }
 ```
+
+**[⬆ back to top](#構成)**
+
+## 参照

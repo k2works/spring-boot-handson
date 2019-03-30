@@ -21,7 +21,13 @@ dependencies {
           'org.springframework.boot:spring-boot-devtools:2.1.1.RELEASE',
           'org.springframework.boot:spring-boot-starter-web:2.1.1.RELEASE',
           'com.amazonaws.serverless:aws-serverless-java-container-spring:[1.0,)',
-          'io.symphonia:lambda-logging:1.0.1'
+          'io.symphonia:lambda-logging:1.0.1',
+          'javax.xml.bind.jaxb-api:2.3.1',
+          'swagger-annotations:1.5.21',
+          'io.springfox:springfox-swagger2:2.7.0',
+          'io.springfox:springfox-swagger-ui:2.7.0',
+          'spring-boot-configuration-processor:2.1.1',
+          'jackson-databind:2.9.8'
   )
 
   testCompile("junit:junit:4.12")

@@ -74,6 +74,8 @@ $ aws cloudformation delete-stack --stack-name ServerlessSpringApi
 
 ### 開発
 
+http://localhost:8080/swagger-ui.html
+
 **[⬆ back to top](#構成)**
 
 ## 参照
